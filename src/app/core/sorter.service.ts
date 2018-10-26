@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class SorterService {
 
   property: string = null;
-  // tslint:disable-next-line:no-inferrable-types
   direction: number = 1;
 
   sort(collection: any[], prop: any) {

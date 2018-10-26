@@ -22,8 +22,11 @@ export class CustomersComponent implements OnInit {
   ngOnInit() {
     this.title = 'Customers';
     this.dataService.getCustomers()
-      .subscribe((customers: ICustomer[]) => this.people = customers);
-    // Hard coded json
+      .subscribe((customers: ICustomer[]) => {
+        console.log(customers)
+        this.people = customers
+      });
+    // Hard-coded json
     // this.people = [
     //   { id: 1, name: 'John Doe', city: 'Phoenix', orderTotal: 9.99, customerSince: new Date(2018, 7, 10)},
     //   { id: 2, name: 'Jane Doe', city: 'Chandler', orderTotal: 19.99, customerSince: new Date(2017, 2, 22)},

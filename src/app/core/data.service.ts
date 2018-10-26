@@ -7,21 +7,18 @@ import { map, catchError } from 'rxjs/operators';
 
 import { ICustomer, IOrder } from '../share/interfaces';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataService {
 
-  baseUrl = 'assets/';
+  baseUrl: string = '../../assets/';
 
   constructor(private http: HttpClient) { }
 
   getCustomers() : Observable<ICustomer[]> {
-    console.log(this.baseUrl + 'customers.json')
     return this.http.get<ICustomer[]>(this.baseUrl + 'customers.json')
-    .pipe(
+   .pipe(
       catchError(this.handleError)
-    );
+   );
   }
 
   getCustomer(id: number) : Observable<ICustomer> {
@@ -45,7 +42,6 @@ export class DataService {
       catchError(this.handleError)
     )
   }
-
 
   private handleError(error: any) {
     console.log('server error: ', error);

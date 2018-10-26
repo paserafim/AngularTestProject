@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ShareModule } from './share/share.module';
 import { CoreModule } from './core/core.module';
 
+// import { SorterService } from './core/sorter.service';
+// import { DataService } from './core/data.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +19,7 @@ import { CoreModule } from './core/core.module';
     ShareModule,
     CoreModule
   ],
-  providers: [],
+  providers: [], // [DataService, SorterService]
   bootstrap: [AppComponent]
 })
 export class AppModule { }
