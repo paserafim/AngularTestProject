@@ -1,5 +1,7 @@
-import { ICustomer } from './../app/share/interfaces';
 import { Component, OnInit } from '@angular/core';
+
+import { ICustomer } from '../share/interfaces';
+import { DataService } from '../core/data.service';
 
 @Component({
   selector: 'app-customers',
@@ -15,16 +17,19 @@ export class CustomersComponent implements OnInit {
     this.isVisible = !this.isVisible;
   }
 
-  constructor() { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.title = 'Customers';
-    this.people = [
-      { id: 1, name: 'John Doe', city: 'Phoenix', orderTotal: 9.99, customerSince: new Date(2018, 7, 10)},
-      { id: 2, name: 'Jane Doe', city: 'Chandler', orderTotal: 19.99, customerSince: new Date(2017, 2, 22)},
-      { id: 3, name: 'Michelle Thomas', city: 'Seattle', orderTotal: 99.99, customerSince: new Date(2017, 7, 10)},
-      { id: 4, name: 'Jim Thomas', city: 'New York', orderTotal: 599.99, customerSince: new Date(2016, 10, 31)},
-    ];
+    this.dataService.getCustomers()
+      .subscribe((customers: ICustomer[]) => this.people = customers);
+    // Hard coded json
+    // this.people = [
+    //   { id: 1, name: 'John Doe', city: 'Phoenix', orderTotal: 9.99, customerSince: new Date(2018, 7, 10)},
+    //   { id: 2, name: 'Jane Doe', city: 'Chandler', orderTotal: 19.99, customerSince: new Date(2017, 2, 22)},
+    //   { id: 3, name: 'Michelle Thomas', city: 'Seattle', orderTotal: 99.99, customerSince: new Date(2017, 7, 10)},
+    //   { id: 4, name: 'Jim Thomas', city: 'New York', orderTotal: 599.99, customerSince: new Date(2016, 10, 31)},
+    // ];
   }
 
 }

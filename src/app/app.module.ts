@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { CustomersModule } from './customers/customers.module';
 import { AppComponent } from './app.component';
-import { ShareModule } from './app/share/share.module';
+import { ShareModule } from './share/share.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ShareModule } from './app/share/share.module';
   imports: [
     BrowserModule,
     CustomersModule,
-    ShareModule
+    ShareModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

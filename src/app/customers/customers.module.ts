@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShareModule } from './../app/share/share.module';
+import { ShareModule } from './../share/share.module';
 import { FormsModule } from '@angular/forms';
 
 import { CustomersComponent } from './customers.component';
@@ -10,7 +10,6 @@ import { FilterTextboxComponent } from './customers-list/filter-textbox/filter-t
 @NgModule({
   imports: [ CommonModule, ShareModule, FormsModule ],
   declarations: [ CustomersComponent, CustomersListComponent, FilterTextboxComponent ],
-  exports: [ CustomersComponent ],
-
+  exports: [ CustomersComponent ]
 })
 export class CustomersModule { }
