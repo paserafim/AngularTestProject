@@ -3,6 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ICustomer } from '../../share/interfaces';
 import { SorterService } from '../../core/sorter.service';
 
+import { CapitalizePipe } from '../../share/capitalize.pipe';
+
 @Component({
   selector: 'app-customers-list',
   templateUrl: './customers-list.component.html',

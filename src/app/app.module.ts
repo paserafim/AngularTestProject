@@ -5,21 +5,20 @@ import { CustomersModule } from './customers/customers.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './share/share.module';
 import { CoreModule } from './core/core.module';
-
-// import { SorterService } from './core/sorter.service';
-// import { DataService } from './core/data.service';
+import { AppRoutingModule } from './app-routing.module';
+import { OrdersModule } from './orders/orders.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
     CustomersModule,
+    OrdersModule,
     ShareModule,
-    CoreModule
+    CoreModule,
+    AppRoutingModule
   ],
-  providers: [], // [DataService, SorterService]
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
